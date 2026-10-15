@@ -20,16 +20,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="date">Last updated: 2026-10-15</p>
-
-        <p>
-            MedCabinet ("the app", "we", "us") protects your privacy. This policy explains what data we collect, how we use it, and how you can control it.
-        </p>
-
+        <h1>Privacy Policy - MedCabinet</h1>
+        <p>Last updated: 2026-10-15</p>
+        <p>MedCabinet ("the app", "we", "us") protects your privacy. This policy explains what data we collect, how we use it, and how you can control it.</p>
         <h2>Data We Collect</h2>
         <ul>
-            <li><strong>Account</strong>: Sign-in is <strong>anonymous only</strong> (guest). There is no Google, Apple, phone, or email sign-in. The server creates an anonymous user id with no personal identity details.</li>
+            <li><strong>Account</strong>: Sign-in is <strong>anonymous only</strong> (guest). There is no Google, Apple, phone, SMS, or email sign-in. The server creates an anonymous user id with no personal identity details.</li>
+            <li><strong>Recovery code</strong>: A personal code (format MC-XXXX-XXXX) can restore your cabinet on a new phone. The app shows the code once it is created; <strong>the server stores only a one-way hash</strong> of the code, never the plaintext.</li>
+            <li><strong>Device reconnect</strong>: On the same phone after reinstall, the app may send a <strong>hashed device identifier</strong> (SHA-256 of a device secret or Android id plus an app salt). This hash is used only to reconnect that phone to your household. It is not a login and is not shared for advertising.</li>
             <li><strong>Cabinet items</strong>: Medicine names, quantities, expiry dates, locations, notes. Your cabinet data belongs to you and is not shared with others.</li>
             <li><strong>Barcode scans</strong>: The barcode is sent to our server to look up the Israeli Ministry of Health drug catalog. If you save an item with a barcode that is not in the official index and link it to a catalog drug, we store a <strong>barcode match</strong> (<code>barcode_suggestion</code>): the barcode number, catalog drug id, and your anonymous user id. Your match is available to you right away; if enough users agree on the same match, it may be promoted to a community index for everyone (without personal details).</li>
             <li><strong>Camera</strong>: Used only for barcode scanning (no images saved).</li>
@@ -37,7 +35,6 @@
             <li><strong>Error logs</strong>: On errors, we upload to the server (<code>app_error</code>): error message, <strong>stack trace</strong>, context, fatal flag, <strong>device info</strong> (OS and version), app version, and <strong>recent steps</strong> in the app before the error. These logs are not intended to include medicine names or cabinet notes.</li>
             <li><strong>Analytics</strong>: General usage via Firebase Analytics (screens viewed, actions such as add item or scan — never medicine names). <strong>We do not collect an Advertising ID, and we do not use tracking for ads or targeted marketing.</strong></li>
         </ul>
-
         <h2>How We Use Data</h2>
         <ul>
             <li>Provide and improve the app</li>
@@ -53,56 +50,33 @@
             <li>Use your data for advertising</li>
             <li>Allow access to your cabinet without your permission (future family sharing — only if you opt in)</li>
         </ul>
-
         <h2>Data Storage</h2>
-        <p>
-            In cloud mode (normal operation against the server), <strong>all data — including guest data — is stored in Supabase on the server</strong>, not only on the device. Your anonymous id and cabinet sync to a secured server. Local demo mode (no server connection) exists for development only and does not represent normal app behavior.
-        </p>
-        <p>
-            Security measures include HTTPS, Row-Level Security (RLS) in Supabase, and anonymous auth via Supabase Auth (no OAuth providers).
-        </p>
-
+        <p>In cloud mode (normal operation against the server), <strong>all data — including guest data — is stored in Supabase on the server</strong>, not only on the device. Your anonymous id and cabinet sync to a secured server. Local demo mode (no server connection) exists for development only and does not represent normal app behavior.</p>
+        <p>Security measures include HTTPS, Row-Level Security (RLS) in Supabase, and anonymous auth via Supabase Auth (no OAuth providers).</p>
         <h2>Your Rights</h2>
         <ul>
             <li><strong>Access &amp; edit</strong>: View and edit all your data in the app</li>
             <li><strong>Delete account</strong>: Settings → Delete account permanently, or <a href="https://oferlazmi.github.io/medcabinet-legal/delete-account-en.html">request deletion</a>, or email <a href="mailto:oferlzm@gmail.com">oferlzm@gmail.com</a></li>
         </ul>
-        <p>
-            Account deletion permanently removes all of your server data, including: cabinet items, your barcode matches (<code>barcode_suggestion</code>), error reports (<code>app_error</code>), and the anonymous auth account.
-        </p>
-
+        <p>Account deletion permanently removes all of your server data, including: cabinet items, your barcode matches (<code>barcode_suggestion</code>), error reports (<code>app_error</code>), recovery code hashes (<code>recovery_code</code>), device reconnect links (<code>device_link</code>), restore attempt records, and the anonymous auth account.</p>
         <h2>Service Providers</h2>
         <ul>
             <li><strong>Supabase</strong>: Data storage and anonymous authentication</li>
             <li><strong>Firebase Analytics</strong>: General usage analytics (no Advertising ID, no ad tracking)</li>
         </ul>
-
         <h2>Data Retention</h2>
         <ul>
             <li><strong>Cabinet data and barcode matches</strong>: Kept while the account is active</li>
             <li><strong>Error logs</strong>: Kept for diagnosis; removed when you delete the account</li>
             <li><strong>Analytics</strong>: Retained per Firebase Analytics policy (up to about 26 months)</li>
         </ul>
-        <p>
-            When you delete your account, all of your server data is deleted immediately and completely.
-        </p>
-
+        <p>When you delete your account, all of your server data is deleted immediately and completely.</p>
         <h2>Children</h2>
-        <p>
-            The app is not intended for children under 13. We do not knowingly collect information from children under that age. Contact <a href="mailto:oferlzm@gmail.com">oferlzm@gmail.com</a> if you believe a child provided us information.
-        </p>
-
+        <p>The app is not intended for children under 13. We do not knowingly collect information from children under that age. Contact <a href="mailto:oferlzm@gmail.com">oferlzm@gmail.com</a> if you believe a child provided us information.</p>
         <h2>Changes to this policy</h2>
-        <p>
-            We may update this policy from time to time. Material changes will be posted in the app and on this page. The last update date appears at the top of this policy.
-        </p>
-
+        <p>We may update this policy from time to time. Material changes will be posted in the app and on this page. The last update date appears at the top of this policy.</p>
         <h2>Contact</h2>
-        <p>
-            Email: <a href="mailto:oferlzm@gmail.com">oferlzm@gmail.com</a><br>
-            Subject: "MedCabinet Privacy Policy"
-        </p>
-
+        <p>Email: <a href="mailto:oferlzm@gmail.com">oferlzm@gmail.com</a> Subject: "MedCabinet Privacy Policy"</p>
         <div class="footer">
             <p>MedCabinet · Personal Medicine Cabinet</p>
             <p style="margin-top: 8px;">
